@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stockity AI</title>
+  <link rel="manifest" href="/assets/manifest.json" />
+  <link rel="stylesheet" href="/assets/styles.css" />
+</head>
+<body>
+  <main class="app">
+    <section class="card">
+      <div class="logo">STOCKITY AI</div>
+      <h1>AI аналіз ринку по фото</h1>
+      <p class="sub">Зроби фото графіка — AI оцінить тренд, напрямок, ймовірність і ризик.</p>
+
+      <input id="asset" placeholder="Актив, наприклад EUR/USD OTC" />
+
+      <label class="upload">
+        📸 Відкрити камеру / вибрати фото
+        <input id="photo" type="file" accept="image/*" capture="environment" />
+      </label>
+
+      <img id="preview" class="preview" alt="preview" />
+
+      <button id="analyze">🤖 Аналізувати</button>
+
+      <div id="loading" class="loading hidden">AI аналізує графік...</div>
+
+      <section id="result" class="result hidden">
+        <div class="asset" id="assetOut"></div>
+        <div class="signal" id="signal"></div>
+        <div class="grid">
+          <div><span>Тренд</span><b id="trend"></b></div>
+          <div><span>Вгору</span><b id="up"></b></div>
+          <div><span>Вниз</span><b id="down"></b></div>
+          <div><span>Впевненість</span><b id="confidence"></b></div>
+          <div><span>Підтримка</span><b id="support"></b></div>
+          <div><span>Опір</span><b id="resistance"></b></div>
+          <div><span>Стан ринку</span><b id="state"></b></div>
+          <div><span>Зона входу</span><b id="entry"></b></div>
+        </div>
+        <p id="reasoning"></p>
+        <small id="risk"></small>
+      </section>
+    </section>
+  </main>
+
+  <script src="/assets/app.js"></script>
+</body>
+</html>
